@@ -1,3 +1,2 @@
 discord
 google.generativeai
-dotenv

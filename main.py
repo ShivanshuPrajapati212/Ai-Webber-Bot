@@ -1,7 +1,11 @@
 import discord
 import google.generativeai as genai
+import os
 
-genai.configure(api_key='AIzaSyDeAtj1nqi5G7OYNvwI8SRC3G9YZAuj6_E')
+TOKEN = os.environ.get("TOKEN")
+GOOGLE_API = os.environ.get("GOOGLE_API")
+
+genai.configure(api_key=GOOGLE_API)
 
 # Set up the model
 generation_config = {
@@ -65,4 +69,4 @@ async def on_message(message):
     await message.channel.send(convo.last.text)
 
 
-client.run('MTIyODU0NTEwOTE1MTMyMjI2NA.Go2g5E.SC8O2xUYZqGX8cFAOh04zFGPqSnz1SfJvCkeWE')
+client.run(TOKEN)
