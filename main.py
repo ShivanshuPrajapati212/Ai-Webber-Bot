@@ -1,6 +1,7 @@
 import discord
 import google.generativeai as genai
 import os
+from keep_alive import keep_alive
 
 TOKEN = os.environ.get("TOKEN")
 GOOGLE_API = os.environ.get("GOOGLE_API")
@@ -68,5 +69,5 @@ async def on_message(message):
     convo.send_message("fix this python code : " + message.content[1:] + "describe it and give the correct code in ``")
     await message.channel.send(convo.last.text)
 
-
+keep_alive()
 client.run(TOKEN)
