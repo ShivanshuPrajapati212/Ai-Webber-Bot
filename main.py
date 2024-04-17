@@ -1,7 +1,7 @@
 import discord
 import google.generativeai as genai
 import os
-from keep_alive import keep_alive
+import dotenv
 
 TOKEN = os.environ.get("TOKEN")
 GOOGLE_API = os.environ.get("GOOGLE_API")
